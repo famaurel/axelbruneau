@@ -1,0 +1,53 @@
+.content-wrap {
+  padding-bottom: 45px;
+  position: relative;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 0px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-full-pink {
+  padding: 80px 0px;
+  background: rgba(224, 175, 160, 0.1);
+}
+
+.mentions-container {
+  padding-top: 120px;
+  a:hover {
+    color: rgb(224, 175, 160)
+  }
+}
+
+.travaux {
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    padding: 50px 0px;
+  }
+  .container-full-pink {
+    padding: 50px 0px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .content-wrap {
+    padding-bottom: 0px;
+  }
+  .container {
+    padding: 30px 0px;
+  }
+  .container-full-pink {
+    padding: 30px 0px;
+  }
+}

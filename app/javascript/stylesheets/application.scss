@@ -1,2 +1,8 @@
 @import "bootstrap/scss/bootstrap";
-@import "trix/dist/trix"
+@import "trix/dist/trix";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300&family=Noto+Serif&family=Roboto+Condensed:wght@300&display=swap');
+
+
+@import "components/banner";
+@import "components/body";

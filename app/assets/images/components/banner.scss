@@ -1,0 +1,130 @@
+.banner {
+  height: 50vh;
+  position: relative;
+}
+
+.line-1 {
+  width: 100%;
+  height: 35%;
+  background-color: white;
+}
+
+.line-2 {
+  width: 100%;
+  height: 20%;
+  background-color: rgba(108, 100, 96, 0.6);
+  display:flex;
+  align-items: center;
+  position: relative;
+  text-align: left;
+  justify-content: right;
+  h1 {
+    width: 75%;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    font-size: 45px;
+    margin: 0.5em 0;
+  }
+}
+
+.line-3 {
+  width: 100%;
+  height: 15%;
+  background-color: rgba(224, 175, 160, 0.6);
+  display:flex;
+  align-items: center;
+  text-align: left;
+  justify-content: right;
+  h1 {
+    width: 75%;
+    color: rgba(58, 51, 53, 0.65);
+    font-size: 37px;
+    margin: 0.5em 0;
+  }
+}
+
+.line-4 {
+  width: 100%;
+  height: 30%;
+  background-color: white;
+  display: flex;
+  align-items: top;
+  text-align: left;
+  justify-content: right;
+  p {
+    font-family: "Poiret One", cursive;
+    font-size: 19px;
+    width: 75%;
+    margin-top: 10px;
+  }
+}
+
+.banner-img {
+  width: 25%;
+  position: absolute;
+  height: auto;
+  top: 10%;
+  img {
+    z-index: 2;
+    position: absolute;
+    width: 85%;
+    left: 10%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .banner {
+    height: 30vh;
+  }
+  .line-2 {
+    h1 {
+      font-size: 40px;
+    }
+  }
+  .line-3 {
+    h1 {
+      font-size: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .banner {
+    height: auto;
+    padding-top: 15%;
+  }
+  .banner-img {
+    display: none;
+  }
+  .line-2 {
+    height: auto;
+    padding-left: 5%;
+    h1 {
+      width: 100%;
+      position: relative;
+      left: 0%;
+      margin: 0;
+    }
+  }
+  .line-3 {
+    height: auto;
+    padding-left: 5%;
+    h1 {
+      position: relative;
+      left: 0%;
+      margin: 0;
+      padding: 2px;
+      width: 100%;
+    }
+  }
+  .line-4 {
+    position: relative;
+    p {
+      position: relative;
+      left: 0;
+      margin: 0;
+      width: 100%;
+      padding-left: 5%;
+    }
+  }
+}

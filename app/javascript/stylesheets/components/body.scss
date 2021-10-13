@@ -1,0 +1,27 @@
+body {
+  height: 100vh;
+  text-align: center;
+  background: lightgrey;
+}
+
+h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 90px;
+  color: #424243;
+}
+
+h2 {
+  font-family: 'Lato', sans-serif;
+}
+
+h3 {
+  font-family: 'Noto Serif', serif;
+}
+
+h4 {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.alerts {
+  display: none;
+}

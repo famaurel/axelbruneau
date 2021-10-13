@@ -1,0 +1,77 @@
+html {
+  position: relative;
+  min-height: 100%;
+  scroll-behavior: smooth
+}
+
+body {
+  text-align: center;
+  min-width: fit-content;
+  position:relative;
+  margin: 0;
+  padding: 0;
+  overflow:auto;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: 'Poiret One', cursive;
+  opacity: 0.7;
+  margin-bottom: 40px;
+  color: #6C6460;
+  font-size: 35px;
+  font-weight: lighter;
+}
+
+h2 {
+  font-family: 'Poiret One', cursive;
+  opacity: 0.7;
+  margin-bottom: 40px;
+  color: #6C6460;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+h3 {
+  font-family: 'Poiret One', cursive;
+  opacity: 0.7;
+  margin-bottom: 20px;
+  color: #6C6460;
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+p {
+  font-family: 'Poiret One', cursive;
+  font-size: 18px;
+  color: #6C6460;
+  opacity: 0.8;
+}
+
+a {
+  text-decoration: none;
+  color: #6C6460;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 16px;
+  }
+}

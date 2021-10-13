@@ -1,0 +1,54 @@
+.deco1 {
+  position: absolute;
+  margin-left: -85px;
+}
+
+.deco1 img {
+  height: 300px;
+}
+
+.deco2 {
+  height: 140px;
+  position: absolute;
+  bottom: 0;
+  right:50px;
+  margin-left: 400px;
+}
+
+.deco2 img {
+  height: 140px;
+}
+
+.deco3 {
+  float: left;
+  margin-right: 30px;
+}
+
+.deco3 img {
+  height: 300px;
+}
+
+@media screen and (max-width: 800px) {
+  .deco3 {
+    float: left;
+    position: relative;
+    margin: 0px 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .deco1 {
+    display: none;
+  }
+  .deco2 {
+    display: none;
+  }
+  .deco3 {
+    img {
+      height: 150px;
+      margin-left: 20px;
+      margin-right: 10px;
+    }
+    margin: 0px;
+  }
+}

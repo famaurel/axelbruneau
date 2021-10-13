@@ -1,0 +1,53 @@
+.cookies-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1px 10px 10px 10px;
+  background-color: #F4F4F4;
+  z-index: 30;
+
+  .btn {
+    color: #FFF;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: grey;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.8;
+    display: block;
+    margin: 0px 10px;
+    // border: none;
+    // cursor: pointer;
+
+    &.accept:hover {
+      background-color: #008589;
+    }
+    &.reject:hover {
+      background-color: #FF6F61;
+    }
+    &.btn-popup:hover {
+      background-color: white;
+      color: #008589;
+    }
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500) {
+  .cookies-bar {
+    padding: 10px 0px;
+    .btn {
+      font-size: 4vw;
+    }
+  }
+}
+
+.cookies-english {
+  display: none;
+}
