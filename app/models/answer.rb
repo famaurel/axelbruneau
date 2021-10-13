@@ -1,4 +1,4 @@
 class Answer < ApplicationRecord
   has_one :user
-  has_one :comment
+  belongs_to :comment
 end
