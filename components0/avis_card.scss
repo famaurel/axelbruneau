@@ -1,0 +1,44 @@
+.avis-card {
+  width: 50%;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  border: solid 0.5px rgba(224, 175, 160, 0.8);
+  a:hover {
+    color: rgba(108, 100, 96, 0.5);
+  }
+  .card-top {
+    background: rgba(224, 175, 160, 0.8);
+    border-radius: 6px 6px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0px;
+    overflow: auto;
+    p {
+      font-family: "Roboto", sans-serif;
+      font-size: 18px;
+      margin: 0px;
+      padding: 0px 10px;
+    }
+    .card-text {
+      text-align: left;
+    }
+  }
+  .card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    flex-grow: 1;
+    p {
+      margin: 0px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .avis-card {
+    width: 80%;
+  }
+}

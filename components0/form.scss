@@ -1,0 +1,101 @@
+form {
+  border-radius: 5px;
+  background-color: rgba(224, 175, 160, 0.8);
+  color: rgba(224, 175, 160, 0.6);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 75px 0px 75px 50px;
+  padding: 30px;
+  ::placeholder {
+    color: #E0AFA0;
+  }
+}
+
+input[type=text], select {
+  width: 100%;
+  margin: 6px 0;
+  display: inline-block;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+.message-input {
+  height: 170px;
+  width: 100%;
+  padding-left: 10px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 5px;
+}
+
+input[type=submit] {
+  width: 100px;
+  height: 34px;
+  background-color: #FAF2F0;
+  color: rgba(108, 100, 96, 0.9);
+  border: none;
+  border-radius: 25px;
+  margin-top: 25px;
+  padding: 0px 12px;
+  box-shadow: 0px 1px 4px rgba(108, 100, 96, 0.2);
+  cursor: pointer;
+  p {
+    line-height: 34px;
+    padding: 0px 10px;
+  }
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+  box-shadow: none;
+}
+
+.g-recaptcha {
+  display: flex;
+  justify-content: center;
+}
+
+#error_explanation {
+  margin: 50px 0px 0px 50px;
+  font-family: 'Poiret One', cursive; /* If you want it to be bold */
+  ul {
+    opacity: 1;
+    display: block;
+    padding: 10px 20px;
+    text-align: left;
+    li {
+      padding: 5px;
+    }
+    li::before {
+      content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: rgba(224, 175, 160, 0.8); /* Change the color */
+      display: inline-block; /* Needed to add space between the bullet and the text */
+      width: 1em; /* Also needed for space (tweak if needed) */
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  form {
+    margin: auto;
+    padding: 30px;
+  }
+  #error_explanation {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  form {
+    margin: auto;
+    padding: 10px;
+  }
+  input[type=text], select {
+    margin: 0px 0px 6px 0px;
+  }
+  input[type=submit] {
+    margin-top: 5px;
+  }
+}

@@ -1,0 +1,36 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+ @import "components/colors";
+ @import "components/avis_card";
+ @import "components/body";
+ @import "components/banner";
+ @import "components/button";
+ @import "components/contact";
+ @import "components/container";
+ @import "components/cookies";
+ @import "components/deco";
+ @import "components/fonts";
+ @import "components/footer";
+ @import "components/alerts";
+ @import "components/form";
+ @import "components/locale";
+ @import "components/navbar_mobile";
+ @import "components/navbar";
+ @import "components/popup";
+ @import "components/presentation";
+ @import "components/project-card";
+ @import "components/show";
+ @import "components/top";
