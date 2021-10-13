@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show]
 
-  resources :articles, only: [:index, :show]
+  resources :articles, only: [:index, :new, :create, :show]
 
   resources :comments, except: [:show] do
     resources :answers, except: [:show]
