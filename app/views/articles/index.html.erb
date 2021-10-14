@@ -1,25 +1,12 @@
-<div class="banner banner-index">
-  <%= image_tag "image.png"  %>
-  <div class="banner-line">
-    <h1>Aux villages, la République</h1>
-  </div>
+<div class="container">
+  <% @articles.each do |article| %>
+    <div class="article-index">
+      <h3><%= article.title %></h3>
+      <%= article.content %>
+      <div class="article-info">
+        <p><%= article.category %></p>
+        <p><%= article.created_at %></p>
+      </div>
+    </div>
+  <% end %>
 </div>
-
-<div class="navbar">
-  <ul class="nav-center">
-    <li class="li-1"><h2>Politique</h2></li>
-    <li class="li-2"><h2>Education</h2></li>
-    <li class="li-3"><h2>Urbanités</h2></li>
-  </ul>
-  <ul class="nav-right">
-    <li><p>Présentation</p></li>
-    <li><p>Le projet</p></li>
-    <li><p>Lectures</p></li>
-  </ul>
-</div>
-
-<h2>Henlo</h2>
-
-<h3>Henlo</h3>
-
-<h4>Henlo</h4>

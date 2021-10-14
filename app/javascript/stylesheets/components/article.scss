@@ -1,0 +1,28 @@
+.article-index {
+  border: 1px solid;
+  border-color: rgba(0,0,0,0.5);
+  padding: 100px 0px;
+  margin-bottom: 100px;
+}
+
+.trix-content {
+  margin: 0px 110px 90px;
+  text-align: justify;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+}
+
+.article-info {
+  width: 100%;
+  height: 70px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: rgba(0,0,0,0.5);
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    margin: 0;
+  }
+}

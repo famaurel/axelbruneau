@@ -15,7 +15,13 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     </div>
-
+    <% if current_page?(root_path) %>
+      <%= render 'layouts/banner-index'  %>
+    <% else %>
+      <%= render 'layouts/banner-pages'  %>
+    <% end %>
+    <%= render 'layouts/navbar'  %>
+    
     <%= yield %>
 
   </body>
