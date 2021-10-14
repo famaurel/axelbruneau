@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
   belongs_to :article
-  has_one :user
+  belongs_to :user
   has_many :answers, dependent: :destroy
 end

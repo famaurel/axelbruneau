@@ -1,9 +1,18 @@
-<p>
- Title: <%= @article.title %>
-</p>
-<p>
- Description: <%= @article.content %>
-</p>
+<div class="container">
+  <div class="article-index">
+    <h3><%= @article.title %></h3>
+    <%= @article.content %>
+    <div class="article-info">
+      <p><%= @article.category %></p>
+      <p><%= @article.created_at %></p>
+    </div>
+    <% if @article.comments %>
+      <p>There are comments</p>
+      <% else %>
+      <p>There aren't any comments</p>
+    <% end %>
+  </div>
+</div>
 
 
 <%= link_to 'Back', articles_path %>

@@ -1,12 +1,60 @@
 <div class="container">
+
   <% @articles.each do |article| %>
+
     <div class="article-index">
+
       <h3><%= article.title %></h3>
+
       <%= article.content %>
+
       <div class="article-info">
         <p><%= article.category %></p>
         <p><%= article.created_at %></p>
       </div>
+
+      <div class="article-comments">
+        <% if article.comments.present? %>
+          <p>Lire les <%= article.comments.count() %> commentaires <i class="fas fa-sort-down"></i></p>
+
+          <% article.comments.each do |comment| %>
+            <div class="comment-container">
+
+              <div class="comment-up">
+                <p class="comment-user"><%= comment.user.username %></p>
+              </div>
+
+              <div class="comment-down">
+                <p class="comment-content"><%= comment.content %></p>
+                <p class="btn btn-answer">Répondre</p>
+              </div>
+            </div>
+
+            <% if comment.answers.present? %>
+              <div class="article-answers">
+                <p><%=comment.answers.count()%> réponses  <i class="fas fa-sort-down"></i></p>
+
+                <% comment.answers.each do |answer| %>
+                  <div class="answer-container">
+                    <div class="answer-up">
+                      <p class="comment-user"><%= answer.user.username %></p>
+                    </div>
+
+                    <div class="answer-down">
+                      <p class="comment-content"><%= answer.content %></p>
+                      <p class="btn btn-answer">Répondre</p>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        <% else %>
+          <p>Ajouter un commentaire</p>
+        <% end %>
+      </div>
+
+
     </div>
   <% end %>
 </div>
