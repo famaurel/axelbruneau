@@ -1,0 +1,18 @@
+
+<% if user_signed_in? %>
+
+  <%= form_with model: @comment, url: article_comments_path(@article), local: true do |form| %>
+
+    <%= form.hidden_field :article_id, value: "#{params[:article_id]}" %>
+
+    <%= form.text_area :content, placeholder: "Votre commentaire" %>
+
+    <%= form.submit "Envoyer" %>
+
+  <% end %>
+
+<% else %>
+  <p>Pour pouvoir commenter, vous devez vous connecter.</p>
+  <%= button_to "Se connecter", new_user_session_path %>
+  <%= link_to "S'inscrire", new_user_registration_path %>
+<% end %>

@@ -3,8 +3,9 @@
   <% @articles.each do |article| %>
 
     <div class="article-index">
-
-      <h3><%= article.title %></h3>
+      <div class="article-title">
+        <h3><%= article.title %></h3>
+      </div>
 
       <%= article.content %>
 
@@ -50,7 +51,25 @@
             <% end %>
           <% end %>
         <% else %>
-          <p>Ajouter un commentaire</p>
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+Ajouter un commentaire
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Ajouter un commentaire</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <%= render 'layouts/comment-form' %>
+    </div>
+  </div>
+</div>
+</div>
         <% end %>
       </div>
 

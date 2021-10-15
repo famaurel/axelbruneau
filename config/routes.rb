@@ -6,12 +6,16 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show]
 
-  resources :articles, only: [:index, :new, :create, :show]
-
-  resources :comments, except: [:show] do
-    resources :answers, except: [:show]
+  resources :articles do
+    resources :comments, only: [:index, :new, :create]
   end
 
-  resources :books, only: [:index]
+  resources :comments, only: [:show, :edit, :update, :destroy] do
+    resources :answers, only: [:index, :new, :create]
+  end
+
+  resources :comments, only: [:show, :edit, :update, :destroy]
+
+  resources :books
 
 end
