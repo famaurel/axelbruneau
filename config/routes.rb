@@ -5,12 +5,14 @@ Rails.application.routes.draw do
   root to: 'articles#index'
 
   resources :categories, only: [:show] do
-    resources :articles do
+    resources :articles, only: [:show] do 
       resources :comments do
         resources :answers
       end
     end
   end
+
+  resources :articles, except: [:show]
 
   resources :books
 

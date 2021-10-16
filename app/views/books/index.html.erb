@@ -1,3 +1,16 @@
 <div class="container">
-  <h1>Lectures</h1>
+  <div class="article-index">
+    <h3>Lectures</h3>
+    <div class="pages-container">
+        <% @books.each do |book| %>
+          <h4><%= book.title %></h4>
+          <p><%= book.description %></p>
+          <br>
+          <hr>
+          <br>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
 </div>

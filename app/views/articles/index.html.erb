@@ -1,3 +1,14 @@
+<script>
+  window.onload = function() {
+    var previous = document.getElementsByClassName("previous_page");
+    var next = document.getElementsByClassName("next_page");
+    previous[0].innerHTML = "← Précédent";
+    next[0].innerHTML = "Suivant →";
+  };
+</script>
+
+
+
 <div class="container">
 
   <% @articles.each do |article| %>
@@ -23,4 +34,9 @@
 
     </div>
   <% end %>
+
+  <div class="flickr_pagination">
+    <%= will_paginate @articles %>
+  </div>
+
 </div>

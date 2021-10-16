@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   # before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 5).reverse_order
   end
 
   def show
@@ -11,22 +11,25 @@ class ArticlesController < ApplicationController
     @article = @category.articles.find(params[:id])
   end
 
-  # def new
-  #   @article = @category.articles.new
-  # end
-  #
-  # def edit
-  # end
-  #
-  # def create
-  #   @article = @category.articles.new(article_params)
-  #   @article.user = current_user
-  #   if @article.save
-  #     redirect_to category_path(@category), notice: 'article was successfully posted.'
-  #   else
-  #     render :new
-  #   end
-  # end
+  def new
+    @article = Article.new
+    # @categories = Category.all.map { |n| n[:id] }
+    # @category_names = Category.all.map { |n| n[:name] }
+    @categories = Category.all
+  end
+
+  def edit
+  end
+
+  def create
+    @article = Article.new(article_params)
+    @categories = Category.all
+    if @article.save
+      redirect_to root_path, notice: 'article was successfully posted.'
+    else
+      render :new
+    end
+  end
 
   # def update
   #   if @article.update(article_params)
@@ -54,6 +57,6 @@ class ArticlesController < ApplicationController
     # end
 
     def article_params
-      params.require(:article).permit(:title, :content, :category_id, :user_id)
+      params.require(:article).permit(:title, :content, :category_id)
     end
 end

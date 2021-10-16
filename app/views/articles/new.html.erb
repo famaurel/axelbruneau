@@ -4,6 +4,8 @@
 
   <%= form.rich_text_area :content %>
 
+  <%= form.collection_select :category_id, @categories, :id, :name %>
+
   <%= form.submit %>
 
 <% end %>

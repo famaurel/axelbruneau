@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @articles = @category.articles.all
+    @articles = @category.articles.all.reverse_order
   end
 
   def edit
