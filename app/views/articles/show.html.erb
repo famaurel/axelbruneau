@@ -1,20 +1,13 @@
 <script>
   window.onload = function() {
-    // console.log("ready");
-    // console.log(window.location.href)
-    // console.log(document.getElementById('commenttoggle').textContent)
-
     var toggle = document.getElementById('commenttoggle');
     toggle.onclick = function() {
-      // console.log("click!");
-      // console.log(document.getElementById('comment-each').textContent);
       var comment = document.getElementById('comment-each');
       comment.classList.toggle("comment-each-hide");
       var commentsShow = document.getElementById('comments-show');
       commentsShow.classList.toggle("comment-each-hide");
       var commentsHide = document.getElementById('comments-hide');
       commentsHide.classList.toggle("comment-each-hide");
-      // commentsHide.classList.add("comment-arrow-show");
     };
   };
 </script>
@@ -30,7 +23,7 @@
 
     <div class="article-info">
       <p><%= link_to @article.category.name, category_path(@article.category) %></p>
-      <p><%= @article.created_at %></p>
+      <p><%= @article.created_at.day %>/<%= @article.created_at.month %>/<%= @article.created_at.year %></p>
     </div>
 
     <div class="article-comments">

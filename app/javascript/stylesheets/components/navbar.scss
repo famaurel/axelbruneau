@@ -2,16 +2,39 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background: #515152;
   padding: 15px 0px;
 }
 
+.nav-left {
+  width: 33%;
+  padding-left: 25px;
+  margin: 0;
+  display: flex;
+  justify-content: left;
+  p {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+  }
+  a {
+    color: white;
+  }
+}
+
 .nav-center {
   display: flex;
-  width: 100%;
-  position: absolute;
+  width: 33%;
   justify-content: center;
   margin: 0;
+  padding: 0;
+  a {
+    color: white;
+  }
+  a:hover {
+    color: #79797C;
+  }
   li {
     padding: 5px 35px;
     h2 {
@@ -28,7 +51,8 @@
 
 .nav-right {
   margin: 0;
-  width: 100%;
+  padding: 0;
+  width: 33%;
   display: flex;
   justify-content: right;
   align-items: center;

@@ -36,6 +36,11 @@ p {
   font-size: 20px;
 }
 
-// .alerts {
-//   display: none;
-// }
+a {
+  text-decoration: none;
+  color: #424243;
+}
+
+a:hover {
+  color: #79797C;
+}

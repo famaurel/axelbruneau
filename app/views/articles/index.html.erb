@@ -12,12 +12,12 @@
           <p><%= article.content.body.to_plain_text.split(" ")[0..50].join(" ")... %></p>
         </div>
         <div class="extract-link">
-          <p><%= link_to "Lire la suite", category_article_path(@category, article) %></p>
+          <p><%= link_to "Lire la suite", category_article_path(article.category, article) %></p>
         </div>
       </div>
 
       <div class="article-info-extract">
-        <p><%= link_to article.category.name, category_path(@category) %></p>
+        <p><%= link_to article.category.name, category_path(article.category) %></p>
         <p><%= article.created_at.day %>/<%= article.created_at.month %>/<%= article.created_at.year %></p>
       </div>
 

@@ -1,8 +1,15 @@
 <div class="navbar">
+  <ul class="nav-left">
+    <li><p>
+      <% unless current_page?(root_path) %>
+        <%= link_to "Accueil", root_path %>
+      <% end %>
+    </p></li>
+  </ul>
   <ul class="nav-center">
-    <li class="li-1"><h2>Politique</h2></li>
-    <li class="li-2"><h2>Education</h2></li>
-    <li class="li-3"><h2>Urbanités</h2></li>
+    <li class="li-1"><h2><a href="/categories/6">Politique</a></h2></li>
+    <li class="li-2"><h2><a href="/categories/7">Education</a></h2></li>
+    <li class="li-3"><h2><a href="/categories/8">Urbanités</a></h2></li>
   </ul>
   <ul class="nav-right">
     <li><p>Présentation</p></li>

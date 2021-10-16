@@ -4,9 +4,6 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    @articles.each do |article|
-      @category = article.category
-    end
   end
 
   def show
