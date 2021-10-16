@@ -134,3 +134,44 @@
     }
   }
 }
+
+@media screen and (max-height: 414px) {
+  .banner-index {
+    img {
+      height: 50%;
+    }
+  }
+  .banner-pages {
+    img {
+      height: 50%;
+    }
+  }
+}
+
+@media screen and (max-height: 375px) {
+  .banner {
+    height: 60%;
+    .banner-line {
+      height: auto;
+    }
+  }
+  .banner-index {
+    img {
+      height: 70%;
+    }
+  }
+  .banner-pages {
+    img {
+      height: 70%;
+    }
+  }
+}
+
+@media screen and (max-height: 320px) {
+  .banner {
+    height: 70%;
+    img {
+      height: 70%;
+    }
+  }
+}
