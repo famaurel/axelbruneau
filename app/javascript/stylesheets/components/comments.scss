@@ -83,12 +83,10 @@
   color: white;
   border-radius: 0px;
   font-weight: 200;
-  a {
-    color: white;
-  }
-  a:hover {
-    color: #E0E0E1;
-  }
+}
+
+.btn-comment:hover {
+  color: #E0E0E1;
 }
 
 .answer-container {

@@ -14,4 +14,7 @@ Rails.application.routes.draw do
 
   resources :books
 
+  get 'presentation', to: 'pages#presentation'
+  get 'projet', to: 'pages#projet'
+
 end
