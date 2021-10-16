@@ -1,4 +1,23 @@
+<script>
+  window.onload = function() {
+    // console.log("ready");
+    // console.log(window.location.href)
+    // console.log(document.getElementById('commenttoggle').textContent)
 
+    var toggle = document.getElementById('commenttoggle');
+    toggle.onclick = function() {
+      // console.log("click!");
+      // console.log(document.getElementById('comment-each').textContent);
+      var comment = document.getElementById('comment-each');
+      comment.classList.toggle("comment-each-hide");
+      var commentsShow = document.getElementById('comments-show');
+      commentsShow.classList.toggle("comment-each-hide");
+      var commentsHide = document.getElementById('comments-hide');
+      commentsHide.classList.toggle("comment-each-hide");
+      // commentsHide.classList.add("comment-arrow-show");
+    };
+  };
+</script>
 
 
 <div class="container">
@@ -16,23 +35,27 @@
 
     <div class="article-comments">
       <% if @article.comments.present? %>
-        <p>Lire les <%= @article.comments.count() %> commentaire(s) <i class="fas fa-sort-down"></i></p>
+        <div class="read-comments">
+          <p id="commenttoggle" >Lire les <%= @article.comments.count() %> commentaire(s) <i class="fas fa-sort-down" id="comments-show"></i><i class="fas fa-sort-up comment-each-hide" id="comments-hide"></i></p>
+        </div>
 
-        <% @article.comments.each do |comment| %>
+        <div class="comment-each-hide" id="comment-each">
+          <% @article.comments.each do |comment| %>
 
-          <div class="comment-container" id="comment-<%= comment.id %>">
-            <div class="comment-up">
-              <p class="comment-user"><%= comment.user.username %></p>
-            </div>
-            <div class="comment-down">
-              <div class="comment-content">
-                <p><%= comment.content %> <%= comment.id %></p>
-                <!-- <p class="btn btn-answer" id="button-answer"> Répondre </p> -->
+            <div class="comment-container">
+              <div class="comment-up">
+                <p class="comment-user"><%= comment.user.username %></p>
               </div>
-            </div>
+              <div class="comment-down">
+                <div class="comment-content">
+                  <p><%= comment.content %></p>
+                  <!-- <p class="btn btn-answer" id="button-answer"> Répondre </p> -->
+                </div>
+              </div>
 
-          </div>
-        <% end %>
+            </div>
+          <% end %>
+        </div>
 
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-comment" data-bs-toggle="modal" data-bs-target="#comment-articleModal">
@@ -44,7 +67,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="commentModalLabel">Ajouter un commentaire à l'article n° <%= @article.id %></h5>
+                <h5 class="modal-title" id="commentModalLabel">Ajouter un commentaire</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">

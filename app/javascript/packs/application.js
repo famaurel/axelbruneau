@@ -15,6 +15,7 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "../stylesheets/application"
+import "packs/hidecomments"
 
 require("trix")
 require("@rails/actiontext")
