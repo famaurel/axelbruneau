@@ -19,6 +19,14 @@
 
 .comment-content {
   margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
 }
 
 .comment-down {
@@ -27,12 +35,46 @@
   justify-content: space-between;
 }
 
+.comment-answer {
+  margin: 20px 0px;
+}
+
+.answer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.answer-form-invisible {
+  display: none;
+}
+
+.answer-form-content {
+  width: 100%;
+}
+
+.answer-form-button {
+  width: 100px;
+  margin-top: 20px;
+  height: 34px;
+}
+
 .btn-answer {
   margin-left: 50px;
+  margin-bottom: 0px;
   border: 1px solid;
   border-color: rgba(0,0,0,0.5);
   border-radius: 0px;
   font-weight: 100;
+}
+
+.btn-comment {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border-radius: 0px;
+  font-weight: 200;
 }
 
 .answer-container {
@@ -48,4 +90,5 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
 }

@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @article.comments.new(comment_params)
-    @comment.user.username = current_user.username
+    @comment.user = current_user
     if @comment.save
       redirect_to article_path(@article), notice: 'Comment was successfully created.'
     else
