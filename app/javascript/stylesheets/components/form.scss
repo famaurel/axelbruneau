@@ -1,0 +1,16 @@
+.modal-body {
+
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+textarea[name=content]{
+  width: 100%;
+  height: 150px;
+  margin-bottom: 15px;
+}

@@ -1,7 +1,7 @@
 
 <% if user_signed_in? %>
 
-  <%= form_with model: @comment, url: article_comments_path(@article), local: true do |form| %>
+  <%= form_with model: @comment, url: category_article_comments_path(@category, @article), class:"form", local: true do |form| %>
 
     <%= form.hidden_field :article_id, value: "#{params[:article_id]}" %>
 

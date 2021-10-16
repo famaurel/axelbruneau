@@ -4,8 +4,6 @@ Rails.application.routes.draw do
 
   root to: 'articles#index'
 
-  resources :categories, only: [:show]
-
   # resources :articles do
   #   resources :comments, only: [:index, :new, :create]
   # end
@@ -14,9 +12,11 @@ Rails.application.routes.draw do
   #   resources :answers, only: [:index, :new, :create]
   # end
 
-  resources :articles do
-    resources :comments do
-      resources :answers
+  resources :categories, only: [:show] do
+    resources :articles do
+      resources :comments do
+        resources :answers
+      end
     end
   end
 

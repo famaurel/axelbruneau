@@ -10,7 +10,7 @@
     <%= @article.content %>
 
     <div class="article-info">
-      <p><%= @article.category.name %></p>
+      <p><%= link_to @article.category.name, category_path(@article.category) %></p>
       <p><%= @article.created_at %></p>
     </div>
 
@@ -20,7 +20,7 @@
 
         <% @article.comments.each do |comment| %>
 
-          <div class="comment-container">
+          <div class="comment-container" id="comment-<%= comment.id %>">
             <div class="comment-up">
               <p class="comment-user"><%= comment.user.username %></p>
             </div>
@@ -56,5 +56,5 @@
       <% end %>
     </div>
   </div>
-  <%= link_to 'Back', articles_path %>
+  <%= link_to 'Back', category_articles_path %>
 </div>

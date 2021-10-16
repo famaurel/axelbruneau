@@ -1,5 +1,5 @@
 <div class="container">
-
+  <h3><%= @category.name %></h3>
   <% @articles.each do |article| %>
 
     <div class="article-index">
@@ -17,10 +17,10 @@
       </div>
 
       <div class="article-info-extract">
-        <p><%= link_to article.category.name, category_path(@category) %></p>
+        <p><%= link_to article.category.name, category_path(article.category) %></p>
         <p><%= article.created_at.day %>/<%= article.created_at.month %>/<%= article.created_at.year %></p>
       </div>
-
     </div>
   <% end %>
+  <%= link_to 'Back', root_path %>
 </div>

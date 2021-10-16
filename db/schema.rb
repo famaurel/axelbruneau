@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_14_134249) do
+ActiveRecord::Schema.define(version: 2021_10_16_102955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 2021_10_14_134249) do
     t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "comment_id"
+    t.index ["comment_id"], name: "index_articles_on_comment_id"
   end
 
   create_table "books", force: :cascade do |t|

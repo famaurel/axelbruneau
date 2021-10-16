@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :get_article
+  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_category
 
   def index
     @comments = @article.comments
@@ -20,7 +21,7 @@ class CommentsController < ApplicationController
     @comment = @article.comments.new(comment_params)
     @comment.user = current_user
     if @comment.save
-      redirect_to article_path(@article), notice: 'Comment was successfully created.'
+      redirect_to category_article_path(@category, @article, :anchor => "comment-#{@comment.id}"), notice: 'Comment was successfully created.'
     else
       render :new
     end
@@ -28,27 +29,29 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update(comment_params)
-      format.html { redirect_to article_path(@article), notice: 'Comment was successfully updated.' }
+      redirect_to category_article_path(@article, :anchor => "comment-#{@comment.id}"), notice: 'Comment was successfully updated.'
     else
-      format.html { render :edit }
+      render :edit
     end
   end
 
   def destroy
-      @comment.destroy
-      respond_to do |format|
-        format.html { redirect_to article_path(@article), notice: 'Comment was successfully destroyed.' }
-    end
+    @comment.destroy
+    redirect_to article_path(@article), notice: 'Comment was successfully destroyed.'
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
+  def get_article
+    @article = Article.find(params[:article_id])
+  end
+
   def set_comment
     @comment = @article.comments.find(params[:id])
   end
 
-  def get_article
-    @article = Article.find(params[:article_id])
+  def set_category
+    @category = @article.category
   end
 
   def comment_params

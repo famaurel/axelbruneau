@@ -1,58 +1,62 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:edit, :update, :show, :destroy]
-  # skip_before_action :authenticate_user!, :only => [:index, :show]
+  # before_action :get_category
+  # before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @articles = Article.paginate(page: params[:page], per_page: 5)
     @articles = Article.all
-  end
-
-  def new
-    @article = Article.new
-  end
-
-  def create
-    #render plain: params[:article].inspect
-    @article = Article.new(article_params)
-    # @article.user = current_user
-    if @article.save
-      flash[:notice] = "Article was successfully created"
-      redirect_to article_path(@article)
-    else
-      flash[:notice] = "Article was NOT successfully created"
-      render 'new'
+    @articles.each do |article|
+      @category = article.category
     end
   end
 
   def show
+    @category = Category.find(params[:category_id])
+    @article = @category.articles.find(params[:id])
   end
 
-  def edit
-  end
+  # def new
+  #   @article = @category.articles.new
+  # end
+  #
+  # def edit
+  # end
+  #
+  # def create
+  #   @article = @category.articles.new(article_params)
+  #   @article.user = current_user
+  #   if @article.save
+  #     redirect_to category_path(@category), notice: 'article was successfully posted.'
+  #   else
+  #     render :new
+  #   end
+  # end
 
-  def update
-    if @article.update(article_params)
-      flash[:notice] = "Article was updated"
-      redirect_to article_path(@article)
-    else
-      flash[:notice] = "Article was not updated"
-      render 'edit'
-    end
-  end
-
-  def destroy
-    @article.destroy
-    flash[:notice] = "Article was deleted"
-    redirect_to articles_path
-  end
+  # def update
+  #   if @article.update(article_params)
+  #     flash[:notice] = "category was updated"
+  #     redirect_to category_path(@category)
+  #   else
+  #     flash[:notice] = "category was not updated"
+  #     render 'edit'
+  #   end
+  # end
+  #
+  # def destroy
+  #   @article.destroy
+  #   redirect_to category_path(@category), notice: 'article was successfully destroyed.'
+  # end
 
   private
-    def set_article
-      @article = Article.find(params[:id])
-    end
+
+    # def get_category
+    #   @category = @article.categories.find(params[:id])
+    # end
+
+    # def set_article
+    #
+    # end
 
     def article_params
-      params.require(:article).permit(:title, :content, :user_id, :category_id)
+      params.require(:article).permit(:title, :content, :category_id, :user_id)
     end
-
 end
