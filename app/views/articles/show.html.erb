@@ -49,28 +49,30 @@
             </div>
           <% end %>
         </div>
+      <% end %>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-comment" data-bs-toggle="modal" data-bs-target="#comment-articleModal">
+      Ajouter un commentaire
+      </button>
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-comment" data-bs-toggle="modal" data-bs-target="#comment-articleModal">
-        Ajouter un commentaire
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="comment-articleModal" tabindex="-1" aria-labelledby="comment-articleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="commentModalLabel">Ajouter un commentaire</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <%= render 'layouts/comment-form' %>
-              </div>
+      <!-- Modal -->
+      <div class="modal fade" id="comment-articleModal" tabindex="-1" aria-labelledby="comment-articleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="commentModalLabel">Ajouter un commentaire</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <%= render 'layouts/comment-form' %>
             </div>
           </div>
         </div>
-      <% end %>
+      </div>
     </div>
   </div>
-  <%= link_to 'Back', category_articles_path %>
+  <div class="back-buttons">
+    <button class="btn btn-back-grey"><%= link_to "Retour à la catégorie #{@article.category.name}", category_path(@article.category) %></button>
+    <button class="btn btn-back-white"><%= link_to "Retour à l'accueil", root_path %></button>
+  </div>
 </div>
