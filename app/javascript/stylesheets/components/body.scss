@@ -44,3 +44,22 @@ a {
 a:hover {
   color: #79797C;
 }
+
+@media screen and (max-width: 540px) and (min-height: 720px) {
+  h1 {
+    font-size: 65px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  p {
+    font-size: 18px;
+  }
+  h3 {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+}

@@ -3,6 +3,7 @@
   border-color: rgba(0,0,0,0.5);
   padding: 80px 0px 0px;
   margin-bottom: 100px;
+  width: 70%;
 }
 
 .article-title {
@@ -99,5 +100,51 @@
   }
   a:hover {
     color: #E0E0E1;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .article-index {
+    width: 80%;
+    margin-bottom: 35px;
+    padding: 50px 0 0;
+    .article-title {
+      padding: 0 20px;
+    }
+    .article-comments {
+      padding: 20px;
+    }
+  }
+  .article-extract {
+    .extract-text {
+      p {
+        padding: 0px 20px;
+        font-size: 18px;
+      }
+    }
+  }
+  .article-content {
+    padding: 0px 20px 20px
+  }
+  .article-extract {
+    .extract-link {
+      p {
+        margin: 30px 0px;
+      }
+    }
+  }
+  .back-buttons {
+    .btn-back-white {
+      margin-bottom: 10px;
+    }
+  }
+  .btn-back-white {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .article-info-extract {
+    flex-direction: column;
   }
 }

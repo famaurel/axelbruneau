@@ -29,3 +29,108 @@
     height: 65%;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .banner-index {
+    height: 40%;
+    img {
+      height: 80%;
+    }
+  }
+}
+
+@media screen and (max-width: 816px) {
+  .banner-pages {
+    img {
+      height: 40%;
+    }
+    .banner-line {
+      height: fit-content;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner-index {
+    height: 35%;
+    .banner-line {
+      height: fit-content;
+    }
+    img {
+      height: 40%;
+    }
+  }
+  .banner-pages {
+    height: 35%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .banner {
+    h1 {
+      font-size: 40px;
+    }
+    img {
+      height: 60%;
+    }
+  }
+  .banner-index {
+    height: 34%;
+    img {
+      height: 80%;
+    }
+  }
+  .banner-pages {
+    height: 26%;
+    img {
+      height: 75%;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) and (max-height: 812px) {
+  .banner {
+    height: 24%;
+    h1 {
+      font-size: 40px;
+    }
+  }
+  .banner-index {
+    img {
+      height: 75%;
+    }
+  }
+  .banner-pages {
+    img {
+      height: 75%;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) and (max-height: 736px) {
+  .banner {
+    height: 24%;
+    h1 {
+      font-size: 40px;
+    }
+  }
+  .banner-index {
+    img {
+      height: 70%;
+    }
+  }
+  .banner-pages {
+    img {
+      height: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .banner {
+    height: 40%;
+    img {
+      height: 60%;
+    }
+  }
+}

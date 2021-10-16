@@ -46,3 +46,23 @@
     width: 130px;
     margin-left: 1em;
   }
+
+@media screen and (max-width: 414px) {
+  .flickr_pagination {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .flickr_pagination .previous_page {
+    width: 112px;
+    margin-right: 0;
+  }
+  .flickr_pagination .next_page {
+    width: 112px;
+    margin-left: 0;
+  }
+  .pagination {
+    justify-content: center;
+  }
+}
