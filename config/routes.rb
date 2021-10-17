@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/administration', as: 'rails_admin'
   devise_for :users
 
   root to: 'articles#index'
 
   resources :categories, only: [:show] do
-    resources :articles, only: [:show] do 
+    resources :articles, only: [:show] do
       resources :comments do
         resources :answers
       end
@@ -14,8 +14,12 @@ Rails.application.routes.draw do
 
   resources :articles, except: [:show]
 
+  resources :comments
+
   resources :books
 
+  get 'admin', to: 'pages#admin'
+  get 'mentions', to: 'pages#mentions'
   get 'presentation', to: 'pages#presentation'
   get 'projet', to: 'pages#projet'
 

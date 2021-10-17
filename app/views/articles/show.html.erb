@@ -29,24 +29,24 @@
     <div class="article-comments">
       <% if @article.comments.present? %>
         <div class="read-comments">
-          <p id="commenttoggle" >Lire les <%= @article.comments.count() %> commentaire(s) <i class="fas fa-sort-down" id="comments-show"></i><i class="fas fa-sort-up comment-each-hide" id="comments-hide"></i></p>
+          <p id="commenttoggle" >Lire les <%= @article.comments.where(published: true).count %> commentaire(s) <i class="fas fa-sort-down" id="comments-show"></i><i class="fas fa-sort-up comment-each-hide" id="comments-hide"></i></p>
         </div>
 
         <div class="comment-each-hide" id="comment-each">
           <% @article.comments.each do |comment| %>
-
-            <div class="comment-container">
-              <div class="comment-up">
-                <p class="comment-user"><%= comment.user.username %></p>
-              </div>
-              <div class="comment-down">
-                <div class="comment-content">
-                  <p><%= comment.content %></p>
-                  <!-- <p class="btn btn-answer" id="button-answer"> Répondre </p> -->
+            <% if comment.published? %>
+              <div class="comment-container">
+                <div class="comment-up">
+                  <p class="comment-user"><%= comment.user.username %></p>
+                </div>
+                <div class="comment-down">
+                  <div class="comment-content">
+                    <p><%= comment.content %></p>
+                    <!-- <p class="btn btn-answer" id="button-answer"> Répondre </p> -->
+                  </div>
                 </div>
               </div>
-
-            </div>
+            <% end %>
           <% end %>
         </div>
       <% end %>
@@ -68,11 +68,10 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
+</div>
   <div class="back-buttons">
     <button class="btn btn-back-grey"><%= link_to "Retour à la catégorie #{@article.category.name}", category_path(@article.category) %></button>
     <button class="btn btn-back-white"><%= link_to "Retour à l'accueil", root_path %></button>
   </div>
-</div>

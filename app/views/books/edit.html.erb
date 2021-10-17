@@ -1,0 +1,9 @@
+<%= form_with model: @book, class: "book-form" do |form| %>
+
+  <%= form.text_field :title %>
+
+  <%= form.rich_text_area :description, id:"support-answer-textarea", class:"support-answer-textarea" %>
+
+  <%= form.submit id:"submit-code" %>
+
+<% end %>

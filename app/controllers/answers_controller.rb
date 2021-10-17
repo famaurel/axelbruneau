@@ -20,7 +20,7 @@ class AnswersController < ApplicationController
     @answer = @comment.answers.new(answer_params)
     @answer.user = current_user
     if @answer.save
-      redirect_to article_path(@comment.article), notice: 'answer was successfully created.'
+      redirect_to article_path(@comment.article), notice: 'Votre commentaire a bien été envoyé. Il sera publié après modération.'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class AnswersController < ApplicationController
 
   def update
     if @answer.update(answer_params)
-      redirect_to article_path(@comment.article), notice: 'answer was successfully updated.'
+      redirect_to article_path(@comment.article), notice: 'Le commentaire a bien été mis à jour.'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class AnswersController < ApplicationController
 
   def destroy
     @answer.destroy
-    redirect_to comment_path(@comment), notice: 'answer was successfully destroyed.'
+    redirect_to comment_path(@comment), notice: 'Le commentaire a bien été supprimé.'
   end
 
   private

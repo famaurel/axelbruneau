@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="article-index">
+    <h3>Commentaires à valider </h3>
+    <% @comments.each do |comment| %>
+      <% if comment.published == false %>
+        <p>Commentaire sur l'article <%= comment.article.title %></p>
+        <p><%= comment.user.username %> dit : <%= comment.content %></p>
+        <br>
+        <button class="btn-back-white"><%= link_to "Valider ce commentaire", edit_comment_path(comment) %></button>
+      <% end %>
+    <% end %>
+
+    <h3>Commentaires publiés </h3>
+    <% @comments.each do |comment| %>
+      <% @category = comment.article.category %>
+      <% if comment.published == true %>
+        <p>Commentaire sur l'article <%= comment.article.title %> dans <%= link_to comment.article.category.name, category_path(@category) %></p>
+        <p><%= comment.user.username %> dit : <%= comment.content %></p>
+        <br>
+      <% end %>
+    <% end %>
+  </div>
+</div>

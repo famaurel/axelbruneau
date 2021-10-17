@@ -5,6 +5,8 @@
 
     <%= form.hidden_field :article_id, value: "#{params[:article_id]}" %>
 
+    <%= form.hidden_field :user_id, value: current_user.id %>
+
     <%= form.text_area :content, placeholder: "Votre commentaire" %>
 
     <%= form.submit "Envoyer" %>

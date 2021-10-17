@@ -45,6 +45,14 @@ a:hover {
   color: #79797C;
 }
 
+.turbolinks-progress-bar {
+  display:none;
+}
+
+.mentions {
+  padding: 20px;
+}
+
 @media screen and (max-width: 540px) and (min-height: 720px) {
   h1 {
     font-size: 65px;

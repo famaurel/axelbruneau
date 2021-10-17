@@ -1,0 +1,13 @@
+<%= form_with model: @comment, class:"form", local: true do |form| %>
+
+  <%= form.label :published, "Publier le commentaire :" %>
+
+  <%= form.check_box :published %>
+
+  <%= form.submit "Envoyer" %>
+
+  <button class="btn-back-white"><%= link_to 'Delete', comment_path(@comment), method: :delete, data: {confirm: "Are you sure"} %></button>
+
+<% end %>
+
+<button class="btn-back-white"><%= link_to "Retour aux commentaires", comments_path %></button>
