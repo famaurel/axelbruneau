@@ -64,6 +64,10 @@
 @media screen and (max-width: 1100px) {
   .navbar {
     flex-direction: column;
+    padding: 0;
+    h2 {
+      font-size: 20px;
+    }
   }
   .nav-left {
     width: auto;
@@ -72,7 +76,7 @@
   }
   .nav-center {
     width: auto;
-    padding: 10px 0;
+    padding: 0;
     .nav-li {
       width: 180px;
     }
@@ -80,6 +84,9 @@
   .nav-right {
     padding: 10px 0;
     width: auto;
+    p {
+      font-size: 18px;
+    }
   }
 }
 
