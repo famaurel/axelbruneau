@@ -18,3 +18,5 @@
 2021-10-17 12:22:09.159 CEST [1515] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2021-10-17 12:22:09.167 CEST [1516] LOG:  database system was shut down at 2021-10-17 12:21:46 CEST
 2021-10-17 12:22:09.173 CEST [1515] LOG:  database system is ready to accept connections
+2021-10-17 18:39:36.252 CEST [8769] ERROR:  relation "category_id" does not exist
+2021-10-17 18:39:36.252 CEST [8769] STATEMENT:  ALTER TABLE "category_id" ADD "comments" integer
