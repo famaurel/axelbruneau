@@ -20,7 +20,7 @@
 
       <div class="article-extract">
         <div class="extract-text">
-          <p><%= article.content.body.to_plain_text.split(" ")[0..50].join(" ")... %></p>
+          <p><%= article.content.body.to_plain_text.split(" ")[0..50].join(" ").gsub(/\[.*?\]/, "")... %></p>
         </div>
         <div class="extract-link">
           <p><%= link_to "Lire la suite", category_article_path(article.category, article) %></p>

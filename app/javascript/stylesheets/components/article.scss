@@ -153,6 +153,28 @@
   }
 }
 
+input[type=text] {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.trix-toolbar {
+  margin-top: 20px;
+}
+
+.trix-content {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+select {
+  height: 35px;
+  padding: 0 10px;
+  background: grey;
+  color: white;
+  margin: 0 20px;
+}
+
 @media screen and (max-width: 375px) {
   .article-info-extract {
     flex-direction: column;
