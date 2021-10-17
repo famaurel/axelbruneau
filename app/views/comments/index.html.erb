@@ -3,8 +3,9 @@
     <h3>Commentaires à valider </h3>
     <% @comments.each do |comment| %>
     <% @category = comment.article.category %>
+    <% @article = comment.article %>
       <% if comment.published == false %>
-        <p>Commentaire sur l'article <%= comment.article.title %> dans <%= link_to comment.article.category.name, category_path(@category) %></p>
+        <p>Commentaire sur l'article "<i><%= link_to comment.article.title, category_article_path(@category, @article) %>"</i> dans <%= link_to comment.article.category.name, category_path(@category) %></p>
         <p><%= comment.user.username %> dit : <%= comment.content %></p>
         <br>
         <button class="btn-back-white"><%= link_to "Valider ce commentaire", edit_comment_path(comment) %></button>
@@ -13,12 +14,15 @@
 
     <h3>Commentaires publiés </h3>
     <% @comments.each do |comment| %>
+      <% @article = comment.article %>
       <% @category = comment.article.category %>
       <% if comment.published == true %>
-        <p>Commentaire sur l'article <%= comment.article.title %> dans <%= link_to comment.article.category.name, category_path(@category) %></p>
+        <p>Commentaire sur l'article "<%= link_to comment.article.title, category_article_path(@category, @article) %>" dans <%= link_to comment.article.category.name, category_path(@category) %></p>
         <p><%= comment.user.username %> dit : <%= comment.content %></p>
         <br>
       <% end %>
     <% end %>
   </div>
+  <button class="btn btn-back-white"><%= link_to "Retour à l'administration", admin_path %></button>
+  <button class="btn btn-back-white"><%= link_to "Retour à l'accueil", root_path %></button>
 </div>
