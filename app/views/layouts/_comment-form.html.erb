@@ -15,6 +15,6 @@
 
 <% else %>
   <p>Pour pouvoir commenter, vous devez vous connecter.</p>
-  <%= button_to "Se connecter", new_user_session_path %>
-  <%= link_to "S'inscrire", new_user_registration_path %>
+  <%= button_to "Se connecter", new_user_session_path, class:"btn btn-back-white" %>
+  <%= button_to "S'inscrire", new_user_registration_path, class:"btn btn-back-grey", method: :get %>
 <% end %>
