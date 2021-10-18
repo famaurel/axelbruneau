@@ -38,7 +38,16 @@ input[type=submit] {
 }
 
 .comment-buttons {
+  display: flex;
+  justify-content: space-evenly;
   margin-bottom: 20px;
+  .btn-back-white {
+    width: fit-content;
+  }
+
+  .btn-back-grey {
+    width: fit-content
+  }
 }
 
 .btn-small {
