@@ -54,8 +54,55 @@
     </div>
       <%= render 'layouts/comment-form' %>
   </div>
+  <% if user_signed_in? %>
+    <% if current_user.admin? %>
+      <div class="comment-buttons">
+
+        <button class="btn btn-back-grey"><%= link_to "Modifier l'article", edit_category_article_path(@article.category, @article) %></button>
+        <button class="btn btn-back-white"><%= link_to "Supprimer l'article", article_path(@article), method: :delete, data: {confirm: "Êtes-vous sûr ?"} %></button>
+
+      </div>
+    <% end %>
+  <% end %>
   <div class="back-buttons">
     <button class="btn btn-back-grey"><%= link_to "Retour à la catégorie #{@article.category.name}", category_path(@article.category) %></button>
     <button class="btn btn-back-white"><%= link_to "Retour à l'accueil", root_path %></button>
   </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signupModalLabel">S'inscrire</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= render 'devise/registrations/newregistration' %>
+        </div>
+        <div class="modal-footer">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Se connecter</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= render 'devise/sessions/newsession' %>
+        </div>
+        <div class="modal-footer">
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

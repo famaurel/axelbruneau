@@ -14,11 +14,36 @@
 
   <body>
 
+    <script>
+      $( document ).ready(function() {
+        var errorreturn = document.getElementById("errorreturn");
+        console.log( "ready!" );
+        if ($(".error-message")[0]) {
+          var errormessage = document.getElementById("errormessage")
+          console.log("class present")
+          console.log(errormessage.innerHTML)
+          if (((errormessage.innerHTML.includes("commentaire")))
+          || ((errormessage.innerHTML.includes("déconnecté")))) {
+            console.log("commentaire");
+            console.log("déconnecté");
+            errorreturn.classList.add("return-invisible");
+          };
+        } else {
+            console.log("class not present")
+            errorreturn.classList.add("return-invisible");
+        }
+      });
+    </script>
+
     <% flash.each do |type, msg| %>
-      <div class="error-message">
+      <div class="error-message" id="errormessage">
         <%= msg %>
       </div>
     <% end %>
+
+    <div class="return" id="errorreturn">
+      <%= button_to "Retour à la page précédente", :back, method: "get" %>
+    </div>
 
     <% if current_page?(root_path) %>
       <%= render 'layouts/banner-index'  %>

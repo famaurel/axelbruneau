@@ -17,7 +17,14 @@
 <% else %>
   <p>Pour pouvoir commenter, vous devez vous connecter.</p>
   <div class="comment-buttons">
-    <%= link_to "Se connecter", new_user_session_path, class:"btn btn-back-grey", target: "_blank" %>
-    <%= link_to "S'inscrire", new_user_registration_path, class:"btn btn-back-white", target: "_blank", method: :get %>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-back-white" data-bs-toggle="modal" data-bs-target="#signupModal">
+      S'inscrire
+    </button>
+
+    <button type="button" class="btn btn-back-grey" data-bs-toggle="modal" data-bs-target="#loginModal">
+      Se connecter
+    </button>
+
   </div>
 <% end %>
