@@ -2,6 +2,8 @@ class ArticlesController < ApplicationController
   # before_action :get_category
   # before_action :set_article, only: [:show, :edit, :update, :destroy]
 
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @articles = Article.paginate(page: params[:page], per_page: 5).reverse_order
   end
