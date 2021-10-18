@@ -44,7 +44,13 @@
     <% end %>
 
     <div class="return" id="errorreturn">
-      <%= button_to "Retour à la page précédente", :back, method: "get" %>
+
+      <% if user_signed_in? && current_user.admin? %>
+        <%= button_to "Retour à l'administration", admin_path, method: "get" %>
+      <% else %>
+        <%= button_to "Retour à la page précédente", :back, method: "get" %>  
+      <% end %>
+
     </div>
 
     <% if current_page?(root_path) %>

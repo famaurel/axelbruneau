@@ -81,7 +81,9 @@
           <%= render 'devise/registrations/newregistration' %>
         </div>
         <div class="modal-footer">
-          <%= render "devise/shared/links" %>
+          <button type="button" class="btn btn-back-grey" data-bs-toggle="modal" data-bs-target="#loginModal">
+            Se connecter
+          </button>
         </div>
       </div>
     </div>
@@ -99,7 +101,35 @@
           <%= render 'devise/sessions/newsession' %>
         </div>
         <div class="modal-footer">
-          <%= render "devise/shared/links" %>
+          <button type="button" class="btn btn-back-white" data-bs-toggle="modal" data-bs-target="#signupModal">
+            S'inscrire
+          </button>
+          <button type="button" class="btn btn-back-grey" data-bs-toggle="modal" data-bs-target="#passwordModal">
+            Mot de passe oublié ?
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="passwordModal" tabindex="-1" aria-labelledby="passwordModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="passwordModalLabel">Oubli du mot de passe</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= render 'devise/passwords/newpassword' %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-back-white" data-bs-toggle="modal" data-bs-target="#signupModal">
+            S'inscrire
+          </button>
+          <button type="button" class="btn btn-back-grey" data-bs-toggle="modal" data-bs-target="#loginModal">
+            Se connecter
+          </button>
         </div>
       </div>
     </div>
