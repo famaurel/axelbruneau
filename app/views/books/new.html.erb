@@ -1,9 +1,16 @@
-<%= form_with model: @book, class: "book-form" do |form| %>
+<div class="container">
+  <h3>Ajouter une lecture</h3>
 
-  <%= form.text_field :title %>
+  <%= form_with model: @book, class: "book-form" do |form| %>
 
-  <%= form.rich_text_area :description, id:"support-answer-textarea", class:"support-answer-textarea" %>
+    <%= form.label "Titre"  %>
+    <%= form.text_field :title %>
 
-  <%= form.submit id:"submit-code" %>
+    <%= form.label "Contenu" %>
+    <%= form.rich_text_area :description %>
 
-<% end %>
+    <%= form.submit "Publier la lecture", id:"submit-code" %>
+
+  <% end %>
+
+</div>

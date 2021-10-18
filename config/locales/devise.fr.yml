@@ -113,7 +113,7 @@ fr:
       already_signed_out: Vous êtes déjà déconnecté(e).
       new:
         sign_in: Connexion
-      signed_in: Vous êtes bien connecté(e). Vous pouvez maintenant fermer cette page.
+      signed_in: Vous êtes bien connecté(e).
       signed_out: Vous ête bien déconnecté(e).
     shared:
       links:

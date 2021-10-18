@@ -23,7 +23,9 @@
           console.log("class present")
           console.log(errormessage.innerHTML)
           if (((errormessage.innerHTML.includes("commentaire")))
-          || ((errormessage.innerHTML.includes("déconnecté")))) {
+          || ((errormessage.innerHTML.includes("déconnecté")))
+          || ((errormessage.innerHTML.includes("L'article a bien été créé")))
+          || ((errormessage.innerHTML.includes("Le livre a bien été créé")))) {
             console.log("commentaire");
             console.log("déconnecté");
             errorreturn.classList.add("return-invisible");
