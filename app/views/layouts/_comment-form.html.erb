@@ -1,15 +1,16 @@
 
 <% if user_signed_in? %>
 
-  <%= form_with model: @comment, url: category_article_comments_path(@category, @article), class:"form", local: true do |form| %>
+  <%= form_with model: @comment, url: category_article_comments_path(@category, @article), class:"form comment-form", local: true do |form| %>
 
   <%= form.hidden_field :user_id, value: current_user.id %>
 
   <%= form.hidden_field :published, value: false %>
 
+  <%= form.label "Ajouter un commentaire"  %>
   <%= form.text_area :content, placeholder: "Votre commentaire" %>
 
-  <%= form.submit "Envoyer" %>
+  <%= form.submit "Envoyer", class:"btn btn-back-grey btn-small" %>
 
   <% end %>
 

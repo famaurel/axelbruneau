@@ -1,5 +1,5 @@
 .article-comments {
-  padding: 50px 100px;
+  padding: 25px 50px;
   i {
     margin: 10px;
   }
@@ -107,4 +107,17 @@
 
 .read-comments {
   cursor: pointer;
+}
+
+.form-inline {
+  label {
+  margin-right: 20px;
+  margin-bottom: 10px;
+  }
+}
+
+.publish-comment {
+  margin-bottom: 30px;
+  border: 1px solid rgba(0,0,0,0.5);
+  padding: 30px;
 }

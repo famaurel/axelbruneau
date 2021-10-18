@@ -13,7 +13,7 @@
     <% end %>
 
     <h3>Commentaires publiés </h3>
-    <% @comments.each do |comment| %>
+    <% @comments.reverse_order.each do |comment| %>
       <% @article = comment.article %>
       <% @category = comment.article.category %>
       <% if comment.published == true %>

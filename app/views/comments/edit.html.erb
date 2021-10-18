@@ -1,13 +1,26 @@
-<%= form_with model: @comment, class:"form", local: true do |form| %>
+<div class="container">
+  <div class="publish-comment">
 
-  <%= form.label :published, "Publier le commentaire :" %>
+  <%= form_with model: @comment, class:"form", local: true do |form| %>
 
-  <%= form.check_box :published %>
+    <p>Publier le commentaire ?</p>
 
-  <%= form.submit "Envoyer" %>
+    <div class="form-inline">
 
-  <button class="btn-back-white"><%= link_to 'Delete', comment_path(@comment), method: :delete, data: {confirm: "Are you sure"} %></button>
+      <%= form.label :published, "Publier" %>
 
-<% end %>
+      <%= form.check_box :published %>
 
-<button class="btn-back-white"><%= link_to "Retour aux commentaires", comments_path %></button>
+    </div>
+
+    <%= form.submit "Envoyer" %>
+
+    </div>
+
+    <button class="btn-back-white"><%= link_to 'Supprimer le commentaire', comment_path(@comment), method: :delete, data: {confirm: "Êtes-vous sûr ?"} %></button>
+
+  <% end %>
+
+  <button class="btn-back-white"><%= link_to "Retour aux commentaires", comments_path %></button>
+
+</div>

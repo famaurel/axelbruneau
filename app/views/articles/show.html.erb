@@ -1,7 +1,9 @@
 <script>
-  window.onload = function() {
+  $(document).ready (function() {
+    console.log("ready");
     var toggle = document.getElementById('commenttoggle');
     toggle.onclick = function() {
+      console.log("click");
       var comment = document.getElementById('comment-each');
       comment.classList.toggle("comment-each-hide");
       var commentsShow = document.getElementById('comments-show');
@@ -9,9 +11,8 @@
       var commentsHide = document.getElementById('comments-hide');
       commentsHide.classList.toggle("comment-each-hide");
     };
-  };
+  });
 </script>
-
 
 <div class="container">
   <div class="article-index">
@@ -50,25 +51,8 @@
           <% end %>
         </div>
       <% end %>
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-comment" data-bs-toggle="modal" data-bs-target="#comment-articleModal">
-      Ajouter un commentaire
-      </button>
-
-      <!-- Modal -->
-      <div class="modal fade" id="comment-articleModal" tabindex="-1" aria-labelledby="comment-articleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="commentModalLabel">Ajouter un commentaire</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <%= render 'layouts/comment-form' %>
-            </div>
-          </div>
-        </div>
     </div>
+      <%= render 'layouts/comment-form' %>
   </div>
 </div>
   <div class="back-buttons">
