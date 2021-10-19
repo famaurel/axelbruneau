@@ -1,7 +1,9 @@
 class CommentMailer < ApplicationMailer
-  def new_comment_email
-  @message = params[:comment]
+  default from: 'noreply.auxvillages@gmail.com'
 
-  mail(to: "contact@fannymaurel.com", subject: "Nouveau commentaire sur le blog")
+  def comment_email
+    @comment = params[:comment]
+    @url  = 'https://auxvillageslarepublique.com/admin'
+    mail(to: "famrltest@gmail.com", subject: "Nouveau commentaire sur le blog")
   end
 end

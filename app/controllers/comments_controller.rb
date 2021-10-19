@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @article.comments.new(comment_permit)
     if @comment.save
-      CommentMailer.with(comment: @comment).new_comment_email.deliver_later
+      CommentMailer.with(comment: @comment).comment_email.deliver_later
       redirect_to category_article_path(@category, @article), :anchor => "comment-#{@comment.id}", notice: 'Votre commentaire a bien été envoyé. Il sera publié après modération.'
     else
       redirect_to category_article_path(@category, @article), notice: "Erreur : Le commentaire n'a pas pu être publié."
