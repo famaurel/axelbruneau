@@ -47,6 +47,7 @@
     <%= button_to "Supprimer", registration_path(resource_name), data: { confirm: "Êtes vous sûr(e)?" }, method: :delete %>
   </div>
 
+  <%= link_to "Se déconnecter", destroy_user_session_path, method: "delete" %>
   <%= link_to "Retour à l'accueil", root_path %>
 
 </div>
