@@ -24,3 +24,26 @@
     }
   }
 }
+
+.edit_user {
+  margin-bottom: 50px;
+  align-items: flex-start;
+  .field {
+    margin: 20px 0;
+    width: 100%;
+  }
+  .actions {
+    margin: 20px 0;
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  input[type="email"], input[type="password"]{
+    width: 100%;
+  }
+}
+
+.delete-account {
+  margin-bottom: 30px;
+}

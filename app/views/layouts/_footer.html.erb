@@ -1,4 +1,8 @@
 <div class="footer">
   <p>Copyright © 2019 - <%= Time.now.year %> Axel Bruneau - Tous droits réservés</p>
   <p><%= link_to "Mentions légales", mentions_path %></p>
+  <% if user_signed_in? %>
+  <% @user = current_user %>
+    <p><%= link_to "Gestion de mon compte", edit_user_registration_path(@user) %></p>
+  <% end %>
 </div>
