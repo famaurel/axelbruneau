@@ -47,3 +47,38 @@
 .delete-account {
   margin-bottom: 30px;
 }
+
+.signup {
+  .new_user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    .field {
+      margin: 10px;
+      width: 100%;
+      input[type = text] {
+        margin: auto;
+      }
+      input[type = email] {
+        width: 100%;
+      }
+      input[type = password] {
+        width: 100%;
+      }
+    }
+    .checkbox-field {
+      label {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.password {
+  .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
