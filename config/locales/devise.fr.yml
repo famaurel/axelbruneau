@@ -25,8 +25,14 @@ fr:
         unconfirmed_email: Email non confirmé
         unlock_token: Clé de déverrouillage
         updated_at: Date de mise à jour
+      article:
+        title: Le titre
+        content: Le contenu
     models:
       user: Utilisateur
+      article:
+        one: article
+        other: articles
   devise:
     confirmations:
       confirmed: Votre compte a bien été confirmé.
@@ -141,5 +147,5 @@ fr:
       not_found: n’a pas été trouvé(e)
       not_locked: n’était pas verrouillé(e)
       not_saved:
-        one: 'une erreur a empêché ce (cet ou cette) %{resource} d’être enregistré(e) :'
+        one: 'Une erreur a empêché ce (cet ou cette) %{resource} d’être enregistré(e) :'
         other: "%{count} erreurs ont empêché ce (cet ou cette) %{resource} d’être enregistré(e) :"

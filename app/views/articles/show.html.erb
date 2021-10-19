@@ -59,6 +59,7 @@
       <div class="comment-buttons">
 
         <button class="btn btn-back-grey"><%= link_to "Modifier l'article", edit_category_article_path(@article.category, @article) %></button>
+        <button class="btn btn-back-grey"><%= link_to "Ecrire un article", new_article_path %></button>
         <button class="btn btn-back-white"><%= link_to "Supprimer l'article", article_path(@article), method: :delete, data: {confirm: "Êtes-vous sûr ?"} %></button>
 
       </div>

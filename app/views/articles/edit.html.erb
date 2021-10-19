@@ -1,8 +1,12 @@
 <div class="container">
   <%= form_with model: @article do |form| %>
 
+    <%= form.label "Titre" %>
+
     <%= form.text_field :title %>
 
+    <%= form.label "Contenu" %>
+    
     <%= form.rich_text_area :content %>
 
     <%= form.collection_select :category_id, @categories, :id, :name %>

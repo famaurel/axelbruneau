@@ -9,6 +9,7 @@
         <p><%= comment.user.username %> dit : <%= comment.content %></p>
         <br>
         <button class="btn-back-white"><%= link_to "Valider ce commentaire", edit_comment_path(comment) %></button>
+        <button class="btn-back-white"><%= link_to 'Supprimer ce commentaire', comment_path(comment), method: :delete, data: {confirm: "Êtes-vous sûr ?"} %></button>
       <% end %>
     <% end %>
 
@@ -20,6 +21,7 @@
         <p>Commentaire sur l'article "<%= link_to comment.article.title, category_article_path(@category, @article) %>" dans <%= link_to comment.article.category.name, category_path(@category) %></p>
         <p><%= comment.user.username %> dit : <%= comment.content %></p>
         <br>
+        <button class="btn-back-white"><%= link_to 'Supprimer ce commentaire', comment_path(comment), method: :delete, data: {confirm: "Êtes-vous sûr ?"} %></button>
       <% end %>
     <% end %>
   </div>

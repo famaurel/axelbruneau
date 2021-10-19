@@ -1,9 +1,13 @@
-<%= form_with model: @book, class: "book-form" do |form| %>
+<dev class="container">
+  <%= form_with model: @book, class: "book-form" do |form| %>
 
-  <%= form.text_field :title %>
+    <%= form.text_field :title %>
 
-  <%= form.rich_text_area :description, id:"support-answer-textarea", class:"support-answer-textarea" %>
+    <%= form.rich_text_area :description, id:"support-answer-textarea", class:"support-answer-textarea" %>
 
-  <%= form.submit id:"submit-code" %>
+    <%= form.submit "Modifier ce livre", id:"submit-code" %>
 
-<% end %>
+  <% end %>
+
+  <button class="btn-back-white"><%= link_to 'Supprimer le livre', book_path(@book), method: :delete, data: {confirm: "Êtes-vous sûr ?"} %></button>
+</dev>

@@ -27,27 +27,32 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @categories = Category.all
     if @article.save
-      flash[:notice] = "L'article a bien été créé"
+      flash[:notice] = "L'article a bien été créé."
       redirect_to root_path
     else
+      flash[:notice] = "L'article n'a pas pu être créé."
       render :new
     end
   end
 
   def update
     @article = Article.find(params[:id])
+    @categories = Category.all
     @category = @article.category
     if @article.update(article_params)
-      flash[:notice] = "L'article a bien été modifié"
+      flash[:notice] = "L'article a bien été modifié."
       redirect_to category_article_path(@category)
     else
-      flash[:notice] = "Erreur : l'article n'a pas pu être modifié"
+      flash[:notice] = "Erreur : l'article n'a pas pu être modifié."
       render 'edit'
     end
   end
 
   def destroy
+    @article = Article.find(params[:id])
+    @category = @article.category
     @article.destroy
     redirect_to category_path(@category), notice: "L'article a bien été supprimé"
   end

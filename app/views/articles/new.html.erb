@@ -21,4 +21,19 @@
     <%= form.submit "Publier l'article", class:"btn btn-devise" %>
 
   <% end %>
+
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+        <p><%= I18n.t("errors.messages.not_saved",
+                   count: @article.errors.count,
+                   resource: @article.class.model_name.human.downcase)
+         %></p>
+      <ul>
+        <% @article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 </div>

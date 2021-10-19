@@ -1,5 +1,10 @@
 <div class="container">
   <h3><%= @category.name %></h3>
+
+  <% if @category.articles.count == 0 %>
+    <p>Il n'y a pas encore d'articles dans cette catégorie.</p>
+  <% end %>
+
   <% @articles.each do |article| %>
 
     <div class="article-index">
