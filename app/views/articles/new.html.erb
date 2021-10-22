@@ -1,23 +1,28 @@
 <div class="container">
   <h3>Ecrire un article</h3>
 
-  <%= form_with model: @article do |form| %>
+  <%= form_with model: @article, class:"article-form" do |form| %>
 
     <%= form.label "Titre" %>
 
     <%= form.text_field :title %>
 
+  <div class="article-content">
+
     <%= form.label "Contenu" %>
 
     <%= form.rich_text_area :content %>
 
-<div class="category_select">
+  </div>
 
-    <%= form.label "Choisir une catégorie" %>
+  <div class="category_select">
 
-    <%= form.collection_select :category_id, @categories, :id, :name %>
+      <%= form.label "Choisir une catégorie" %>
 
-</div>
+      <%= form.collection_select :category_id, @categories, :id, :name %>
+
+  </div>
+
     <%= form.submit "Publier l'article", class:"btn btn-devise" %>
 
   <% end %>

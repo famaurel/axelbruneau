@@ -5,23 +5,25 @@
       <p>Il n'y a pas encore de lectures.</p>
     <% end %>
     <div class="pages-container">
-      <% @books.each do |book| %>
-        <h4><%= book.title %></h4>
-        <p><%= book.description %></p>
-        <br>
-        <hr>
-        <br>
-        <% if user_signed_in? %>
-          <% if current_user.admin? %>
-            <div class="comment-buttons">
+      <div class="book-index">
+        <% @books.each do |book| %>
+          <h4><%= book.title %></h4>
+          <p><%= book.description %></p>
+          <br>
+          <hr>
+          <br>
+          <% if user_signed_in? %>
+            <% if current_user.admin? %>
+              <div class="comment-buttons">
 
-              <button class="btn btn-back-grey"><%= link_to "Modifier le livre", edit_book_path(book) %></button>
-              <button class="btn btn-back-white"><%= link_to "Supprimer le livre", book_path(book), method: :delete, data: {confirm: "Êtes-vous sûr ?"} %></button>
+                <button class="btn btn-back-grey"><%= link_to "Modifier le livre", edit_book_path(book) %></button>
+                <button class="btn btn-back-white"><%= link_to "Supprimer le livre", book_path(book), method: :delete, data: {confirm: "Êtes-vous sûr ?"} %></button>
 
-            </div>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

@@ -1,0 +1,22 @@
+.book-title {
+  .trix-content {
+    width: 800px;
+    min-height: 150px;
+  }
+}
+
+.book-description {
+  .trix-content {
+    width: 800px;
+    min-height: 400px;
+  }
+}
+
+.book-index {
+  text-align: center;
+  .trix-content {
+    figcaption {
+      display: none;
+    }
+  }
+}

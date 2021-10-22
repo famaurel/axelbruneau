@@ -3,12 +3,16 @@
 
   <%= form_with model: @book, class: "book-form" do |form| %>
 
+  <div class="book-title">
     <%= form.label "Titre"  %>
-    <%= form.text_field :title %>
+    <%= form.rich_text_area :title %>
+  </div>
 
+  <div class="book-description">
     <%= form.label "Contenu" %>
     <%= form.rich_text_area :description %>
-
+  </div>
+  
     <%= form.submit "Publier la lecture", id:"submit-code" %>
 
   <% end %>

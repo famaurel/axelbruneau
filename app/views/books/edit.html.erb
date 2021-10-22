@@ -1,9 +1,15 @@
 <dev class="container">
   <%= form_with model: @book, class: "book-form" do |form| %>
 
-    <%= form.text_field :title %>
+    <div class="book-title">
+      <%= form.label "Titre"  %>
+      <%= form.rich_text_area :title %>
+    </div>
 
-    <%= form.rich_text_area :description, id:"support-answer-textarea", class:"support-answer-textarea" %>
+    <div class="book-description">
+      <%= form.label "Contenu" %>
+      <%= form.rich_text_area :description %>
+    </div>
 
     <%= form.submit "Modifier ce livre", id:"submit-code" %>
 

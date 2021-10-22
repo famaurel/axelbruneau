@@ -1,5 +1,9 @@
 <div class="footer">
-  <p>Copyright © 2019 - <%= Time.now.year %> Axel Bruneau - Tous droits réservés</p>
+  <p>Copyright © 2021
+    <% if Time.now.year != 2021 %>
+    - <%= Time.now.year %>
+    <% end %>
+    Aux villages la République - Tous droits réservés</p>
   <p><%= link_to "Mentions légales", mentions_path %></p>
   <% if user_signed_in? %>
   <% @user = current_user %>
