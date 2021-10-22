@@ -12,7 +12,7 @@ amazon:
   access_key_id: <%= Rails.application.credentials.config[:aws][:access_key_id] %>
   secret_access_key: <%= Rails.application.credentials.config[:aws][:secret_access_key] %>
   region: eu-west-3
-  bucket: auxvillages
+  bucket: auxvillageslarep
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:

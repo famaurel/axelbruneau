@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Axelbruneau</title>
+    <title>Aux villages, la République</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -48,7 +48,7 @@
       <% if user_signed_in? && current_user.admin? %>
         <%= button_to "Retour à l'administration", admin_path, method: "get" %>
       <% else %>
-        <%= button_to "Retour à la page précédente", :back, method: "get" %>  
+        <%= button_to "Retour à la page précédente", :back, method: "get" %>
       <% end %>
 
     </div>
