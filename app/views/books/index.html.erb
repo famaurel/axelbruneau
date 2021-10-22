@@ -8,7 +8,9 @@
       <div class="book-index">
         <% @books.each do |book| %>
           <h4><%= book.title %></h4>
-          <p><%= book.description %></p>
+          <div class="book-description-index">
+            <p><%= book.description %></p>
+          </div>
           <br>
           <hr>
           <br>

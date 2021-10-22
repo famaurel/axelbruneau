@@ -9,14 +9,18 @@
   .trix-content {
     width: 800px;
     min-height: 400px;
+    text-align: justify;
   }
 }
 
 .book-index {
   text-align: center;
-  .trix-content {
-    figcaption {
-      display: none;
+  .book-description-index {
+    .trix-content {
+      text-align: justify;
+      figcaption {
+        display: none;
+      }
     }
   }
 }
