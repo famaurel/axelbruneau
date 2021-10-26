@@ -2,13 +2,6 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :set_locale
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :redirect_subdomain
-
-  def redirect_subdomain
-    if request.host == 'http://auxvillageslarepublique.com' || 'auxvillageslarepublique.com'
-      redirect_to 'https://auxvillageslarepublique.com' + request.fullpath, :status => 301
-    end
-  end
 
   protected
 
