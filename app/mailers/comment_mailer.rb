@@ -4,6 +4,6 @@ class CommentMailer < ApplicationMailer
   def comment_email
     @comment = params[:comment]
     @url  = 'https://auxvillageslarepublique.com/admin'
-    mail(to: "famrltest@gmail.com", subject: "Nouveau commentaire sur le blog")
+    mail(to: "abruneau93@gmail.com", subject: "Nouveau commentaire sur le blog")
   end
 end
